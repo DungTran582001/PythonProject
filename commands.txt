@@ -13,4 +13,15 @@ pip freeze > requirements.txt
 * start project django python
 django-admin startproject core .
 
+* create app
+python manage.py startapp app
+
 * git
+git init
+git status
+git add .
+git remote add origin "https:..."
+git push -u origin main
+
+*write Dockerfile
+
