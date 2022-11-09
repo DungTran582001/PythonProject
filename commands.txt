@@ -1,0 +1,16 @@
+* create venv
+python3 -m venv venv
+
+* activate venv
+source venv/bin/activate
+
+* pip
+pip install django
+
+* create requirements.txt file
+pip freeze > requirements.txt
+
+* start project django python
+django-admin startproject core .
+
+* git
