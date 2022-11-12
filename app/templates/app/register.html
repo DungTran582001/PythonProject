@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PythonProject</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
 </head>
 <body>
-    <h1>register</h1>
+    <div class="form-login">
+        <h1>Đăng ký</h1>
+        <form action="" method="post" class="post-form-login">
+            {% csrf_token %}
+            <p>Email:</p>
+            <input type="email" placeholder="Nhập địa chỉ email..." name="email">
+            <p>Tên người dùng:</p>
+            <input type="text" placeholder="Nhập tên người dùng..." name="username">
+            <p>Mật khẩu:</p>
+            <input type="password" placeholder="Nhập mật khẩu..." name="password1">
+            <p>Xác nhận mật khẩu:</p>
+            <input type="password" placeholder="Nhập xác nhận mật khẩu..." name="password2">
+            <br>
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
 </body>
 </html>

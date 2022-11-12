@@ -1,5 +1,5 @@
 * code git
-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
+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
 
 * create venv
 python3 -m venv venv
