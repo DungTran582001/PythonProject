@@ -68,15 +68,24 @@ body{
     background-color: rgb(184, 171, 171);
     display: flex;
     position: relative;
+    border-bottom: 1px solid black;
+    box-shadow: inset 0px 0px 10px 0 black;
 }
 
 .container .navbar span{
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 10px;
+    display: flex;
+}
+
+.container .navbar span h1{
+    font-size: 20px;
+    color: black;
 }
 
 .container .navbar i{
+    font-size: 20px;
     position: absolute;
     right: 10px;
     bottom: 10px;
