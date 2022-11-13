@@ -56,3 +56,17 @@ body{
     color: rgb(37, 125, 160);
     border-radius: 0 15px 0 15px;
 }
+
+.form-login .change-registerview{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-login .change-registerview a{
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.form-login .change-registerview a:hover{
+    color: red;
+}

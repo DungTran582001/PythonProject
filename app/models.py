@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Member(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null =True)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
     budget = models.FloatField(default=0, null=True)

@@ -12,6 +12,7 @@ body{
 }
 
 .form-login{
+    overflow: hidden;
     width: 400px;
     background: white;
     border-radius: 25px;
