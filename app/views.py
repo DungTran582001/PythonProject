@@ -8,7 +8,9 @@ from django.contrib import messages
 
 @login_required(login_url='login')
 def home(request):
-    return render(request,"app/main.html")
+    user_info = request.user.member
+    context = {"user_infors": user_info}
+    return render(request,"app/main.html", context)
 
 
 def loginView(request):
@@ -16,16 +18,25 @@ def loginView(request):
         return redirect("home")
     else:
         if request.method == "POST":
-            get_user_with_email = Member.objects.filter(email = request.POST.get('email')).first()
-            if not get_user_with_email:
-                pass
+            if request.POST.get("email") == "" or request.POST.get("password") == "":
+                messages_error = "Vui lòng điền đầy đủ thông tin."
+                context = {"msg": messages_error}
+                return render(request, "app/login.html", context)
             else:
-                user_auth = authenticate(request, username= get_user_with_email.name, password = request.POST.get("password"))
-                if user_auth is not None:
-                    login(request,user_auth)
-                    return redirect("home")
+                get_user_with_email = Member.objects.filter(email = request.POST.get('email')).first()
+                if not get_user_with_email:
+                    messages_error = "Tài khoản không tồn tại."
+                    context = {"msg": messages_error}
+                    return render(request, "app/login.html", context)
                 else:
-                    pass
+                    user_auth = authenticate(request, username= get_user_with_email.name, password = request.POST.get("password"))
+                    if user_auth is not None:
+                        login(request,user_auth)
+                        return redirect("home")
+                    else:
+                        messages_error = "Tài khoản không tồn tại."
+                        context = {"msg": messages_error}
+                        return render(request, "app/login.html", context)
         return render(request, "app/login.html")
 
 def registerView(request):

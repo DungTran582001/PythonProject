@@ -13,7 +13,7 @@
 <body>
     <div class="form-login">
         {% if msg == "Mật khẩu và mật khẩu xác nhận không trùng khớp!" or msg == "Email đã được sử dụng. Vui lòng dùng email khác để đăng ký." or msg == "Vui lòng điền đầy đủ thông tin." %}
-            <div class="alert" style="display: flex;background: rgb(219, 73, 73); color: white; margin-top: 20px; margin-left: 15px; margin-right: 15px;">
+            <div class="alert" style="display: flex;background: rgb(219, 73, 73); color: white; margin-top: 20px; margin-left: 15px; margin-right: 15px; border-radius: 10px;">
                 <i class="fa-solid fa-triangle-exclamation" style="padding: 15px;"></i>
                 <h3 style="font-size: 20px; padding: 10px 10px 10px 20px;">{{msg}}</h3>
                 <a onclick="" style="color: white;"><i class="fa-solid fa-xmark" style="margin-top: 5px; margin-right: 10px;"></i></a>

@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 <div class="navbar">
-    <span><h1>Dung Tran </h1> (manhdung58001@gmail.com)</span>
+    <span><h1>{{user_infors.name}} </h1> ({{user_infors.email}})</span>
     <a href="{% url 'logout' %}" style="color:black">
         <i class="fa-solid fa-right-from-bracket btn-logout"></i>
     </a>
